@@ -28,7 +28,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -97,7 +97,7 @@
               <a href="https://www.ri.cmu.edu/ri-faculty/john-m-dolan/">John M. Dolan</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://me.berkeley.edu/people/francesco-borrelli/">Francesco Borrelli</a><sup>2</sup>,
+              <a href="https://me.berkeley.edu/people/francesco-borrelli/">Francesco Borrelli</a><sup>2</sup>
             </span>
           </div>
 
@@ -168,77 +168,16 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+      <video id="teaser" controls muted loop playsinline height="100%">
+        <source src="https://github.com/HaoruXue/Racing-LMPC-ROS2/assets/32390737/745e5f15-f159-42ad-be74-ac5673867a03"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        Learning MPC formulates real-world safe robot learning in an MPC paragidm. Error dynamics regression bridges the Sim2Real gap.
       </h2>
     </div>
   </div>
 </section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -248,32 +187,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+          This work presents a novel Learning Model Predictive Control (LMPC) strategy
+          for autonomous racing at the handling limit that can iteratively explore and
+          learn unknown dynamics in high-speed operational domains. We start from existing
+          LMPC formulations and  modify the system dynamics learning method. In particular,
+          our approach uses a nominal, global, nonlinear, physics-based model with a local,
+          linear, data-driven learning of the error dynamics. We conduct experiments in
+          simulation, 1/10th scale hardware, and deployed the proposed LMPC on a full-scale
+          autonomous race car used in the Indy Autonomous Challenge (IAC) with closed loop
+          experiments at the Putnam Park Road Course in Indiana, USA.
+        </p>
+        <p>
+        The results show that the proposed control policy  exhibits improved robustness to
+        parameter tuning and data scarcity. Incremental and safety-aware exploration toward
+        the limit of handling and iterative learning of the vehicle dynamics in high-speed domains
+        is observed both in simulations and experiments.
+        </p>
         </div>
       </div>
     </div>
@@ -282,10 +211,9 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
+        <h2 class="title is-3">Talk</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/o_tA-6iSN20?si=j1RDDEDApddVRuoa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -296,109 +224,134 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
+    <!-- LMPC basics -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Why Using Learning MPC for Roobot Learning</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            Learning MPC combines some of the best aspects of traditional and data-driven optimal control. On one side,
+            we have a strong prior in the form of a physics-based model. On the other side, we have the flexibility of
+            data-driven methods to learn the modeling error. This is complemented with some other things:
           </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
+          <ul>
+            <li><b>Constraint reasoning:</b> MPC is good at solving with constraints.</li>
+            <li><b>Policy learning:</b> not just for dynamics, LMPC embeds a policy learning tool as well, which is introduced below.</li>
+            <li><b>Reference-free learning:</b> with a few demonstrations to get LMPC started, it can converge towards optimal policy
+              without an explicit reference trajectory.</li>
+          </ul>
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            Naturally, some learning tasks benifit more from LMPC. These are usually safety-critical or agile tasks in the real world.
+            For example, autonomous racing, where the vehicle is operating at the limit of handling, is an interesting candidate for LMPC.
           </p>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
+     <!-- LMPC basics -->
+     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">How Learning MPC Works</h2>
 
+        <div class="content has-text-justified">
+          <p>
+            Learning MPC is a data-driven MPC method that uses previous experience to iteratively improve the control policy.
+            It can also be augmented with regression to learn the dynamics of the system.
+          </p>
+        
+          <img src="static/images/lmpc_eq.png" alt="Learning MPC with Error Dynamics Regression" style="width:30%;" class="is-centered">
+        
+          <p>
+            Previous iterations of states and actions are stored in the sampled Safe Set (SS). Assuming a time-invariant environment,
+            returning to the SS states will guarantee successful completion of the task - this is the control-invariance property of the SS.
+            Therefore, we constrain the last state in the MPC horizon to be in the SS, which yields a iterative and safe exploration behavior
+            around the SS. With the appropriate cost function, the control policy will learn to converge to the optimal policy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ LMPC basics -->
+
+    <!-- LMPC basics -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">LMPC Can Also Learn Dynamics</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We can query the SS to obtain neighboring states and actions to the robot's current state. We can then use this data to
+            learn the dynamics of the system. This is done by fitting a linear model to the data, and has been attempted in
+            <a href="https://doi.org/10.1109/TCST.2019.2948135">previous work</a>.
+          </p>
+        
+          <p>
+            Instead of doing a full regression to learn the entire dynamics, this work introduces a residual learning approach. The motivation
+            is to leverage a prior model, either physics-based or learned-in-simulation. For the latter, this method helps bridge the Sim2Real gap. We hypothesize that this approach can be more data-efficient
+            and robust to hyperparameter tunings.
+          </p>
+
+          <p>
+            To formulate the A, B and C matrices for the DDP-based MPC, we first linearize the prior model to form the baseline prediction for these matrices.
+            We then query the SS to obtain the residual dynamics, which is then added on top of the prior prediction. This is done by solving a weighted least-squares problem.
+          </p>
+  
+          <img src="static/images/regression.png" alt="Learning MPC with Error Dynamics Regression" style="width:80%;" class="is-centered">
+
+        </div>
+      </div>
+    </div>
+    <!--/ LMPC basics -->
+
+    <!-- LMPC basics -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Small-scale experiment on F1TENTH race cars shows that the proposed error-regression LMPC can learn the dynamics of the vehicle and converge to the optimal policy.
+            Compared with the full-regression LMPC, the error-regression LMPC is more robust to hyperparameter tuning and data scarcity. The plot below compares
+            the failure rate of the two methods. Full-regression LMPC fails 5 out of 10 trials with suboptimal hyperparameters, while the error-regression LMPC
+            fails only 1 out of 10 trials.
+          </p>
+  
+          <img src="static/images/fig_barc_per_lap_new.png" alt="Learning MPC with Error Dynamics Regression" style="width:70%;" class="is-centered">
+
+          <p>
+            The plot below visualizes the learning progress at the 1st, 5th, and 20th iteration. The vehicle starts with few-shot non-expert demonstrations of driving,
+            and gradually learns to drive faster and more aggressively. The vehicle is able to learn to drive at the limit of handling
+            and converge to a consistent lap time.
+          </p>
+          <img src="static/images/fig_barc_trajectory.png" alt="Learning MPC with Error Dynamics Regression" style="width:70%;" class="is-centered">
+
+          <p>
+            We also did full-size experiments on profession autonomous race cars in the <a href="https://www.indyautonomouschallenge.com/">Indy Autonomous Challenge</a>.
+            These autonomous race cars are capable of driving up to 340 km/h (200 mph). 
+          </p>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/I2nQbDTGlpA?si=ztN5lo6PvCDDWE_3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ LMPC basics -->
+
+    <!-- LMPC basics -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3", style="color: red;">Takeaways</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The series of works on Learning MPC shows that
+          </p>
+          <ul>
+            <li>MPC is a useful paradigm for real-world robot learning.</li>
+            <li>A locally accurate dynamics may just be enough: we don't need to learn a globally expressive dynamics model.</li>
+            <li>Iterative learning and exploration helps to mitigate the "chicken-and-egg" problem between high-quality data and good control policy in robot learning.</li>
+        </div>
+      </div>
+    </div>
+    <!--/ LMPC basics -->
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
@@ -407,20 +360,13 @@
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            Check out previous works in Learning MPC at UC Berkeley's <a href="https://sites.google.com/berkeley.edu/lmpc/home?authuser=0">MPC Lab</a>.
           </p>
           <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+            For exciting autonomous racing clips, check out <a href="https://youtube.com/playlist?list=PLuc9RFkF6rdLSjV7A2phDUyl5OpHjG9eT&si=fe5C6orL79xYQ-1u">Haoru's YouTube channel</a>.
           </p>
           <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            Learn more about the collaborative autonomous racing research between UC Berkeley, CMU, and UC San Diego at <a href="https://www.airacingtech.com/">AI Racing Tech</a>.
           </p>
         </div>
       </div>
@@ -434,27 +380,31 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{xue2024learning,
+      title={Learning Model Predictive Control with Error Dynamics Regression for Autonomous Racing}, 
+      author={Haoru Xue and Edward L. Zhu and John M. Dolan and Francesco Borrelli},
+      year={2024},
+      eprint={2309.10716},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
 }</code></pre>
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">The End</h2>
+    <div class="content has-text-justified">
+      <p>
+        Some cool autonomous race car videos!
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zTl0JwnTcQw?si=vgXEJPkneZrVfxN5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
@@ -464,11 +414,8 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            This amazing website template was obtained <a
+              href="https://github.com/nerfies/nerfies.github.io">here</a>.
           </p>
         </div>
       </div>
